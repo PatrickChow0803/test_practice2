@@ -10,5 +10,22 @@ void main() {
       favorites.add(number);
       expect(favorites.items.contains(number), true);
     });
+
+    test(
+      'should remove an item',
+      () {
+        // arrange
+        var number = 45;
+
+        // act
+        favorites.add(45);
+
+        // assert
+        expect(favorites.items.contains(45), true);
+
+        favorites.remove(45);
+        expect(favorites.items.contains(45), false);
+      },
+    );
   });
 }
